@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	button{
+		outline: none;
+	}
+		.zanting{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-top: 100px;
+			text-align: center;
+			line-height: 100px;
+			font-size: 30px;
+		}
+		.kaishi{
+			width: 100px;
+			height: 100px;
+			background: gray;
+			margin-top: 20px;
+			text-align: center;
+			line-height: 100px;
+			font-size: 30px;
+		}
+		.jieshu{
+			width: 100px;
+			height: 100px;
+			background: purple;
+			margin-top: 20px;
+			text-align: center;
+			line-height: 100px;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<button class="zanting">暂停</button>
+	<button class="kaishi">开始</button>
+	<button class="jieshu">结束</button>
+		
+		<script type="text/javascript">
+            var k = 30;
+            var timer = setInterval(function(){
+                if(k== -1){
+                    clearInterval(timer);
+                }else{
+                    box.innerHTML = '00 : '+'00 :'+k;
+                    --k;
+                }
+            },1000);
+ 
+        	var zanting = document.querySelector('.zanting');
+			var kaishi = document.querySelector('.kaishi');
+			var jieshu = document.querySelector('.jieshu');
+			zanting.onclick = function(){
+				clearInterval(timer);
+			}
+			kaishi.onclick = function(){
+				timer = setInterval(function(){
+                if(k== -1){
+                    clearInterval(timer);
+                }else{
+                    box.innerHTML = '00 : '+'00 :'+k;
+                    --k;
+                }
+            },1000);
+			}
+			jieshu.onclick = function(){
+				clearInterval(timer);
+			}
+    </script>
+</body>
+<html>
